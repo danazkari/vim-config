@@ -434,7 +434,7 @@ map <S-l> :tablast<CR>
 nmap ,w :w<CR>
 nmap ,x :x<CR>
 
-" Map for Search/Replate Trailing White space
+" Map for Search/Replace Trailing White space
 :nnoremap <leader>ws :call DeleteTrailingWS()<CR>
 
 " Toggle GitGutter
