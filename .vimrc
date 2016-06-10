@@ -116,6 +116,8 @@ Plug 'vim-scripts/jade.vim'
 
 Plug 'pangloss/vim-javascript'
 
+Plug 'leafgarland/typescript-vim'
+
 Plug 'plasticboy/vim-markdown'
 
 Plug 'tpope/vim-rails'
@@ -135,10 +137,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 
 Plug 'airblade/vim-gitgutter'
-
-Plug 'SirVer/ultisnips'
-
-Plug 'matthewsimo/angular-vim-ultisnips'
 
 Plug 'marijnh/tern_for_vim'
 
@@ -262,6 +260,9 @@ let g:NERDTreeIndicatorMapCustom = {
 
 nmap <silent> <c-n> :NERDTreeToggle<CR>
 
+" TypeScript recognition
+autocmd BufNewFile,BufRead *.ts set syntax=typescript
+
 " Command mode completion
 
 function! CmdLine(str)
@@ -352,13 +353,6 @@ set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 " Match settings
 set matchpairs+=<:>     " specially for html
 
-let g:UltiSnipsSnippetsDir="~/.vim/bundle/ultisnips/Ultisnips"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "angular-snippets"]
-let g:UltiSnipsExpandTrigger="<f5>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-
-
 
 " ========================================
 " Utility Functions & Custom Commands
@@ -413,9 +407,6 @@ vnoremap <silent> # :<C-U>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
-" Edit Snippets for this file type
-:nnoremap <leader>es :split :UltiSnipsEdit<cr>
-
 " Remap keys used for tabs
 :nnoremap <leader>J J
 
@@ -430,6 +421,9 @@ map <S-l> :tablast<CR>
 " Map for nerd tree - to control n in normal mode
 nmap ,w :w<CR>
 nmap ,x :x<CR>
+
+nmap <leader>g :cn<CR>
+nmap <leader>G :cp<CR>
 
 " Map for Search/Replate Trailing White space
 :nnoremap <leader>ws :call DeleteTrailingWS()<CR>
@@ -450,9 +444,6 @@ nmap ,x :x<CR>
 " Toggle Paste Mode & auto unset when leaving insert mode
 :nnoremap <leader>v :set paste!<CR>i
 au InsertLeave * set nopaste
-
-" Manually bind ListSnippets function, since setting option never worked...
-:nnoremap <leader><Space> :call UltiSnips_ListSnippets()<CR>
 
 " Split Window Creation Helpers
 :nnoremap <leader>9 :split<CR>
