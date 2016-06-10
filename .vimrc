@@ -350,9 +350,12 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_root_markers = ['.ctrlp']
 set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 
+" Syntastic config
+
+let g:syntastic_javascript_checkers = ['eslint']
+
 " Match settings
 set matchpairs+=<:>     " specially for html
-
 
 " ========================================
 " Utility Functions & Custom Commands
@@ -425,7 +428,7 @@ nmap ,x :x<CR>
 nmap <leader>g :cn<CR>
 nmap <leader>G :cp<CR>
 
-" Map for Search/Replate Trailing White space
+" Map for Search/Replace Trailing White space
 :nnoremap <leader>ws :call DeleteTrailingWS()<CR>
 
 " Toggle GitGutter
@@ -477,7 +480,7 @@ au InsertLeave * set nopaste
 
 
 " Copy to Clipboard
-vnoremap <leader>c :w !pbcopy<CR><CR>
+vnoremap <leader>c :w !xsel --clipboard --input<CR><CR>
 
 " Pretty print JSON
 :nnoremap <leader>ppj :%!python -m json.tool<CR>
