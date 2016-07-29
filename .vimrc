@@ -134,6 +134,8 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'scrooloose/syntastic'
 
+Plug 'sophacles/vim-processing'
+
 Plug 'airblade/vim-gitgutter'
 
 Plug 'SirVer/ultisnips'
@@ -161,6 +163,12 @@ Plug 'elzr/vim-json'
 Plug 'sickill/vim-monokai'
 
 Plug 'mattn/emmet-vim'
+
+Plug 'leafgarland/typescript-vim'
+
+Plug 'Quramy/tsuquyomi'
+
+Plug 'Shougo/vimproc.vim'
 
 call plug#end()
 
@@ -352,6 +360,9 @@ set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 " Syntastic config
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
+
+let g:syntastic_typescript_tsc_fname = ''
 
 " Match settings
 set matchpairs+=<:>     " specially for html
@@ -506,6 +517,9 @@ vnoremap <leader>c :w !xsel --clipboard --input<CR><CR>
 
 " EJS Templates as html
 au BufNewFile,BufRead *.ejs set filetype=html
+
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.ts,*.tsx set syntax=typescript
 
 " Set jsx for .js files as well as .jsx
 let g:jsx_ext_required = 0

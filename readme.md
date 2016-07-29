@@ -17,6 +17,14 @@ After that's done, open up `vim` (will sort of fail at first but just continue) 
 
 Close vim and then enter it again, it should look pretty rad.
 
+## Typescript support
+For typescript support, please install the `typescript` npm package globally:
+```bash
+$ npm install -g typescript
+```
+
+Then, inside of `vim` run `:VimProcInstall`. Restar the editor and you should be good to go!
+
 That's it, go for a cup of coffee and hack hack hackity hack McHack.
 
 ![This is how it looks now](http://res.cloudinary.com/danazkari/image/upload/v1458244829/7BkOG_kqrnse.png)
