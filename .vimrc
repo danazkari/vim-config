@@ -98,6 +98,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'mhartington/vim-angular2-snippets'
+
 Plug 'tpope/vim-fugitive'
 
 Plug 'altercation/vim-colors-solarized'
@@ -115,8 +120,6 @@ Plug 'nono/vim-handlebars'
 Plug 'vim-scripts/jade.vim'
 
 Plug 'pangloss/vim-javascript'
-
-Plug 'leafgarland/typescript-vim'
 
 Plug 'plasticboy/vim-markdown'
 
@@ -267,9 +270,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 nmap <silent> <c-n> :NERDTreeToggle<CR>
-
-" TypeScript recognition
-autocmd BufNewFile,BufRead *.ts set syntax=typescript
 
 " Command mode completion
 
