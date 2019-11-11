@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
+Plug 'plytophogy/vim-virtualenv'
+
 Plug 'tomlion/vim-solidity'
 
 Plug 'amadeus/vim-mjml'
@@ -23,7 +25,13 @@ Plug 'mattn/gist-vim'
 
 Plug 'tpope/vim-haml'
 
+Plug 'jonsmithers/vim-html-template-literals'
+
 Plug 'pangloss/vim-javascript'
+
+Plug 'zivyangll/git-blame.vim'
+
+Plug 'jparise/vim-graphql'
 
 Plug 'plasticboy/vim-markdown'
 
@@ -65,6 +73,8 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'Quramy/tsuquyomi'
 
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
 
 source ~/vim-config/configs/plugins/monokai.vimrc
@@ -75,4 +85,5 @@ source ~/vim-config/configs/plugins/gitgutter.vimrc
 source ~/vim-config/configs/plugins/airline.vimrc
 source ~/vim-config/configs/plugins/syntastic.vimrc
 source ~/vim-config/configs/plugins/jsx.vimrc
+source ~/vim-config/configs/plugins/git-blame.vimrc
 

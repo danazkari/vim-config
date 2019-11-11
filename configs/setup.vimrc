@@ -42,8 +42,8 @@ set hidden      " support unsaved buffer changes
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set nowrap
 set magic
@@ -98,11 +98,13 @@ autocmd BufNewFile,BufRead *.ts,*.tsx set syntax=typescript
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
-  if &term =~ '^screen'
-      " tmux knows the extended mouse mode
+  if has('mouse_sgr')
+      set ttymouse=sgr
+  else
       set ttymouse=xterm2
-  endif
+  end
 endif
+
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
