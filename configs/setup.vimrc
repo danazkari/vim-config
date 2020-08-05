@@ -37,7 +37,7 @@ set showcmd		" display incomplete commands
 set incsearch	" do incremental searching
 set noswapfile  " avoid creating swapfile
 set number      " use number gutter
-set relativenumber
+" set relativenumber
 set hidden      " support unsaved buffer changes
 set autoindent
 set smartindent
@@ -144,7 +144,7 @@ if !exists(":DiffOrig")
             \ | wincmd p | diffthis
 endif
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Copy to Clipboard
 if has("unix")
