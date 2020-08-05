@@ -77,13 +77,29 @@ Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
-source ~/vim-config/configs/plugins/monokai.vimrc
-source ~/vim-config/configs/plugins/tern.vimrc
-source ~/vim-config/configs/plugins/nerdtree.vimrc
-source ~/vim-config/configs/plugins/ctrlp.vimrc
-source ~/vim-config/configs/plugins/gitgutter.vimrc
-source ~/vim-config/configs/plugins/airline.vimrc
-source ~/vim-config/configs/plugins/syntastic.vimrc
-source ~/vim-config/configs/plugins/jsx.vimrc
-source ~/vim-config/configs/plugins/git-blame.vimrc
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+
+call SourceIfExists("~/vim-config/configs/plugins/monokai.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/nerdtree.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/ctrlp.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/gitgutter.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/airline.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/syntastic.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/jsx.vimrc")
+call SourceIfExists("~/vim-config/configs/plugins/git.blame.vimrc")
+
+" source ~/vim-config/configs/plugins/tern.vimrc
+" source ~/vim-config/configs/plugins/nerdtree.vimrc
+" source ~/vim-config/configs/plugins/ctrlp.vimrc
+" source ~/vim-config/configs/plugins/gitgutter.vimrc
+" source ~/vim-config/configs/plugins/airline.vimrc
+" source ~/vim-config/configs/plugins/syntastic.vimrc
+" source ~/vim-config/configs/plugins/jsx.vimrc
+" source ~/vim-config/configs/plugins/git-blame.vimrc
 
