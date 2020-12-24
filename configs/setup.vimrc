@@ -100,7 +100,7 @@ if has('mouse')
   set mouse=a
   if has('mouse_sgr')
       set ttymouse=sgr
-  else
+  elseif !has('nvim')
       set ttymouse=xterm2
   end
 endif
