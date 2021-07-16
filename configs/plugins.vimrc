@@ -86,4 +86,5 @@ source ~/vim-config/configs/plugins/airline.vimrc
 source ~/vim-config/configs/plugins/syntastic.vimrc
 source ~/vim-config/configs/plugins/jsx.vimrc
 source ~/vim-config/configs/plugins/git-blame.vimrc
+source ~/vim-config/configs/plugins/snipmate.vimrc
 
